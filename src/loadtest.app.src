@@ -1,0 +1,18 @@
+{application, loadtest,
+ [{description, "Loadtest - A quick loadtest tool for couchbase server validation"}
+  ,{vsn, "1"}
+  ,{registered, []}
+  ,{applications, [kernel
+                   ,stdlib
+                  ]}
+  ,{mod, {loadtest_app, []}}
+  ,{env, [{memcache_pool, [{size, 300}
+                           ,{max_overflow, 1000}
+                           ,{hostname, "127.0.0.1"}
+                           ,{port, 11211}
+                          ]}
+          ,{set_count, 50}
+          ,{reader_sets, 4}
+          ,{writer_sets, 2}
+         ]}
+ ]}.
